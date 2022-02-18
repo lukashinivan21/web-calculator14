@@ -5,41 +5,27 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
 
-    private float number1;
-    private float number2;
-
-    public CalculatorServiceImpl() {
-    }
-
-    public void setNumber1(float number1) {
-        this.number1 = number1;
-    }
-
-    public void setNumber2(float number2) {
-        this.number2 = number2;
-    }
-
     @Override
-    public String sum() {
-        float result = number1 + number2;
+    public String sum(String s1, String s2) {
+        float result = Float.parseFloat(s1) + Float.parseFloat(s2);
         return Float.toString(result);
     }
 
     @Override
-    public String difference() {
-        float result = number1 - number2;
+    public String difference(String s1, String s2) {
+        float result = Float.parseFloat(s1) - Float.parseFloat(s2);
         return Float.toString(result);
     }
 
     @Override
-    public String multiple() {
-        float result = number1 * number2;
+    public String multiple(String s1, String s2) {
+        float result = Float.parseFloat(s1) * Float.parseFloat(s2);
         return Float.toString(result);
     }
 
     @Override
-    public String divide() {
-        float result = number1 / number2;
+    public String divide(String s1, String s2) {
+        float result = Float.parseFloat(s1) / Float.parseFloat(s2);
         return Float.toString(result);
     }
 }
