@@ -2,11 +2,11 @@ package pro.sky.java.course2.webcalculator14.service;
 
 public interface CalculatorService {
 
-    String sum(String s1, String s2);
+    int sum(int num1, int num2);
 
-    String difference(String s1, String s2);
+    int difference(int num1, int num2);
 
-    String multiple(String s1, String s2);
+    int multiple(int num1, int num2);
 
-    String divide(String s1, String s2);
+    float divide(int num1, int num2);
 }

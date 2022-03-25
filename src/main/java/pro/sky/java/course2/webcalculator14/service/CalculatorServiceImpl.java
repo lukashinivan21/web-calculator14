@@ -6,26 +6,25 @@ import org.springframework.stereotype.Service;
 public class CalculatorServiceImpl implements CalculatorService {
 
     @Override
-    public String sum(String s1, String s2) {
-        float result = Float.parseFloat(s1) + Float.parseFloat(s2);
-        return Float.toString(result);
+    public int sum(int num1, int num2) {
+        return num1 + num2;
     }
 
     @Override
-    public String difference(String s1, String s2) {
-        float result = Float.parseFloat(s1) - Float.parseFloat(s2);
-        return Float.toString(result);
+    public int difference(int num1, int num2) {
+        return num1 - num2;
     }
 
     @Override
-    public String multiple(String s1, String s2) {
-        float result = Float.parseFloat(s1) * Float.parseFloat(s2);
-        return Float.toString(result);
+    public int multiple(int num1, int num2) {
+        return num1 * num2;
     }
 
     @Override
-    public String divide(String s1, String s2) {
-        float result = Float.parseFloat(s1) / Float.parseFloat(s2);
-        return Float.toString(result);
+    public float divide(int num1, int num2) {
+        if (num2 == 0) {
+            throw new IllegalArgumentException("Введено не корректное число");
+        }
+        return (float) num1 / num2;
     }
 }

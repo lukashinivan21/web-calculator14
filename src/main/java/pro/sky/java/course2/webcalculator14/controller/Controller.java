@@ -22,26 +22,22 @@ public class Controller {
     }
 
     @GetMapping("/plus")
-    public String sum(@RequestParam String num1, @RequestParam String num2) {
+    public String sum(@RequestParam int num1, @RequestParam int num2) {
         return num1 + " + " + num2 + " = " + calculatorService.sum(num1, num2);
     }
 
     @GetMapping("/minus")
-    public String difference(@RequestParam String num1, @RequestParam String num2) {
+    public String difference(@RequestParam int num1, @RequestParam int num2) {
         return num1 + " - " + num2 + " = " + calculatorService.difference(num1, num2);
     }
 
     @GetMapping("/multiple")
-    public String multiple(@RequestParam String num1, @RequestParam String num2) {
+    public String multiple(@RequestParam int num1, @RequestParam int num2) {
         return num1 + " * " + num2 + " = " + calculatorService.multiple(num1, num2);
     }
 
     @GetMapping("/divide")
-    public String divide(@RequestParam String num1, @RequestParam String num2) {
-        if (num2.equals("0")) {
-            return "Введено не корректное число";
-        } else {
-            return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
-        }
+    public String divide(@RequestParam int num1, @RequestParam int num2) {
+        return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
     }
 }
